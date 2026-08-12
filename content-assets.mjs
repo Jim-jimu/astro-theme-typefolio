@@ -1,0 +1,13 @@
+
+import __ASTRO_IMAGE_IMPORT_27PYzw from "./logo.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fmarkdown-elements%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_ZYoOWO from "./cover.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fcover-image%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_28mLtP from "./1.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_1FwY6A from "./2.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_1dHbIl from "./3.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_KRol6 from "./4.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_j2AWQ from "./5.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_Z8Mbpo from "./6.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_1rKTqM from "./7.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcoastline-studies%2Findex.md";
+import __ASTRO_IMAGE_IMPORT_1qJ7LQ from "./8.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcoastline-studies%2Findex.md";
+export default new Map([["./logo.webp?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fmarkdown-elements%2Findex.md", __ASTRO_IMAGE_IMPORT_27PYzw], ["./cover.png?astroContentImageFlag=&importer=src%2Fcontent%2Fblog%2Fcover-image%2Findex.md", __ASTRO_IMAGE_IMPORT_ZYoOWO], ["./1.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md", __ASTRO_IMAGE_IMPORT_28mLtP], ["./2.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md", __ASTRO_IMAGE_IMPORT_1FwY6A], ["./3.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md", __ASTRO_IMAGE_IMPORT_1dHbIl], ["./4.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md", __ASTRO_IMAGE_IMPORT_KRol6], ["./5.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md", __ASTRO_IMAGE_IMPORT_j2AWQ], ["./6.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcity-intervals%2Findex.md", __ASTRO_IMAGE_IMPORT_Z8Mbpo], ["./7.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcoastline-studies%2Findex.md", __ASTRO_IMAGE_IMPORT_1rKTqM], ["./8.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fgallery%2Fcoastline-studies%2Findex.md", __ASTRO_IMAGE_IMPORT_1qJ7LQ]]);
+		
