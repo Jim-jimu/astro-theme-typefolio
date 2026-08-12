@@ -227,16 +227,27 @@ The generic form works too: :color[theme-aware blue text]{color=blue}.
 Pseudocode fences render numbered, indented algorithms with optional inputs, outputs, comments, and
 inline KaTeX expressions:
 
-```pseudocode title="Value Iteration" number=1
-@require State set $\mathcal{S}$, discount factor $\gamma$
-@ensure Optimal value function $V^*$
-for each $s \in \mathcal{S}$ do
-  $V(s) \leftarrow 0$
-end for
-while not converged do
-  Update $V(s)$ {Bellman backup}
+```pseudocode title="Policy iteration algorithm" number=2
+@require The probability model $p(r|s,a)$ and $p(s'|s,a)$ for all $(s,a)$ are known
+@ensure Optimal state value and optimal policy
+Initialize $\pi_0$
+while $\pi_k$ has not converged, for the $k$th iteration, do
+  // Policy evaluation
+  Initialize an arbitrary $v_{\pi_k}^{(0)}$
+  while $v_{\pi_k}^{(j)}$ has not converged, for the $j$th iteration, do
+    for every state $s \in \mathcal{S}$, do
+      $v_{\pi_k}^{(j+1)}(s) = \sum_a \pi_k(a|s)[\sum_r p(r|s,a)r + \gamma \sum_{s'}p(s'|s,a)v_{\pi_k}^{(j)}(s')]$
+    end for
+  end while
+  // Policy improvement
+  for every state $s \in \mathcal{S}$, do
+    for every action $a \in \mathcal{A}$, do
+      $q_{\pi_k}(s,a) = \sum_r p(r|s,a)r + \gamma \sum_{s'}p(s'|s,a)v_{\pi_k}(s')$
+    end for
+    $a_k^*(s) = \arg\max_a q_{\pi_k}(s,a)$
+    $\pi_{k+1}(a|s) = 1$ if $a=a_k^*$, and $\pi_{k+1}(a|s)=0$ otherwise
+  end for
 end while
-return $V$
 ```
 
 ## Links

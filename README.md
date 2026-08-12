@@ -258,19 +258,26 @@ Colors adapt to light and dark themes. Do not use color as the only way to commu
 Use a `pseudocode` fence for paper-style algorithms. The optional `title` (or `caption`) and `number`
 metadata create the caption. `@require` and `@ensure` describe inputs and outputs. Two spaces or one tab
 add one indentation level; common control-flow keywords are emphasized automatically. Text inside
-braces is treated as a comment, and inline `$...$` expressions are rendered with KaTeX.
+braces or after `//` is treated as a comment, and inline `$...$` expressions are rendered with KaTeX.
 
 ````md
-```pseudocode title="Value Iteration" number=1
-@require State set $\mathcal{S}$, discount factor $\gamma$
-@ensure Optimal value function $V^*$
-for each $s \in \mathcal{S}$ do
-  $V(s) \leftarrow 0$
-end for
-while not converged do
-  Update $V(s)$ {Bellman backup}
+```pseudocode title="Policy iteration algorithm" number=2
+@require Probability models $p(r|s,a)$ and $p(s'|s,a)$
+@ensure Optimal state value and optimal policy
+Initialize $\pi_0$
+while $\pi_k$ has not converged do
+  // Policy evaluation
+  Initialize an arbitrary $v_{\pi_k}^{(0)}$
+  while $v_{\pi_k}^{(j)}$ has not converged do
+    for every state $s \in \mathcal{S}$ do
+      Update $v_{\pi_k}^{(j+1)}(s)$ {Bellman expectation backup}
+    end for
+  end while
+  // Policy improvement
+  for every state $s \in \mathcal{S}$ do
+    Improve $\pi_{k+1}(a|s)$ greedily
+  end for
 end while
-return $V$
 ```
 ````
 

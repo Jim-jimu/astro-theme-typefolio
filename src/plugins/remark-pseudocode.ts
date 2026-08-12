@@ -8,7 +8,7 @@ type RenderNode = PhrasingContent | ReturnType<typeof h>;
 const META_VALUE_PATTERN = (name: string) =>
 	new RegExp(`(?:^|\\s)${name}=(?:"([^"]*)"|'([^']*)'|([^\\s]+))`, "i");
 const KEYWORD_PATTERN =
-	/(\{[^{}]*\}|\b(?:end\s+(?:if|for|while|repeat)|else\s+if|if|then|else|for|while|repeat|until|do|return|break|continue)\b)/gi;
+	/(\/\/.*|\{[^{}]*\}|\b(?:end\s+(?:if|for|while|repeat)|else\s+if|if|then|else|for|while|repeat|until|do|return|break|continue)\b)/gi;
 const INLINE_MATH_PATTERN = /\$([^$\n]+)\$/g;
 const MAX_ALGORITHM_NUMBER = 999;
 const MAX_INDENT_LEVEL = 12;
@@ -37,7 +37,7 @@ function parseText(value: string): RenderNode[] {
 		if (start > cursor) nodes.push({ type: "text", value: value.slice(cursor, start) });
 
 		const token = match[0];
-		if (token.startsWith("{") && token.endsWith("}")) {
+		if (token.startsWith("//") || (token.startsWith("{") && token.endsWith("}"))) {
 			nodes.push(h("span", { class: "pseudocode-comment" }, [{ type: "text", value: token }]));
 		} else {
 			nodes.push({
