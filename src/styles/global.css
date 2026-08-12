@@ -1,6 +1,7 @@
 /* would like to ignore ./src/pages/og-image/[slug].png.ts */
 @import "tailwindcss";
 @import "katex/dist/katex.min.css";
+@import "./components/pseudocode.css";
 /* config for tailwindcss-typography plugin */
 @config "../../tailwind.config.ts";
 
@@ -90,6 +91,48 @@
 		@apply underline decoration-[0.06em] underline-offset-[0.16em] decoration-current/35 transition-[text-decoration-color,text-decoration-thickness] duration-150 ease-in-out hover:decoration-link hover:decoration-[0.09em] focus-visible:decoration-link focus-visible:decoration-[0.09em];
 	}
 
+	.markdown-image-width {
+		width: var(--markdown-image-width);
+		max-width: 100%;
+		height: auto;
+	}
+
+	.markdown-text-color-red {
+		@apply text-red-700 dark:text-red-400;
+	}
+
+	.markdown-text-color-blue {
+		@apply text-blue-700 dark:text-blue-400;
+	}
+
+	.markdown-text-color-green {
+		@apply text-green-700 dark:text-green-400;
+	}
+
+	.markdown-text-color-orange {
+		@apply text-orange-700 dark:text-orange-400;
+	}
+
+	.markdown-text-color-yellow {
+		@apply text-amber-700 dark:text-amber-300;
+	}
+
+	.markdown-text-color-purple {
+		@apply text-purple-700 dark:text-purple-400;
+	}
+
+	.markdown-text-color-pink {
+		@apply text-pink-700 dark:text-pink-400;
+	}
+
+	.markdown-text-color-teal {
+		@apply text-teal-700 dark:text-teal-400;
+	}
+
+	.markdown-text-color-gray {
+		@apply text-gray-600 dark:text-gray-400;
+	}
+
 	.title {
 		@apply text-accent-2 text-2xl font-semibold wrap-break-word;
 	}
@@ -160,7 +203,8 @@
 	}
 }
 
-.gallery-rail-scrollbar {
+.gallery-rail-scrollbar,
+.toc-scrollbar {
 	scrollbar-width: thin;
 	scrollbar-color: color-mix(in oklch, var(--color-rule) 85%, transparent) transparent;
 }
@@ -176,6 +220,25 @@
 .gallery-rail-scrollbar::-webkit-scrollbar-thumb {
 	background: color-mix(in oklch, var(--color-rule) 85%, transparent);
 	border-radius: 999px;
+}
+
+@media (min-width: 64rem) {
+	.toc-scrollbar {
+		scrollbar-gutter: stable;
+	}
+
+	.toc-scrollbar::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+
+	.toc-scrollbar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.toc-scrollbar::-webkit-scrollbar-thumb {
+		background: color-mix(in oklch, var(--color-rule) 85%, transparent);
+		border-radius: 999px;
+	}
 }
 
 /* Keep copy button styles outside Tailwind layers: Expressive Code injects `.copy` markup at runtime,

@@ -209,6 +209,36 @@ Image in the same folder: `src/content/blog/markdown-elements/logo.webp`
 
 ![Astro theme typefolio logo](./logo.webp)
 
+Set a responsive width by appending a width attribute directly after the image:
+
+![Astro theme typefolio logo at half width](./logo.webp){width=50%}
+
+## Colored text
+
+Text directives provide a small theme-aware palette for technical emphasis:
+
+:red[Red text], :blue[blue text], :green[green text], :orange[orange text], :yellow[yellow text],
+:purple[purple text], :pink[pink text], :teal[teal text], and :gray[gray text].
+
+The generic form works too: :color[theme-aware blue text]{color=blue}.
+
+## Pseudocode
+
+Pseudocode fences render numbered, indented algorithms with optional inputs, outputs, comments, and
+inline KaTeX expressions:
+
+```pseudocode title="Value Iteration" number=1
+@require State set $\mathcal{S}$, discount factor $\gamma$
+@ensure Optimal value function $V^*$
+for each $s \in \mathcal{S}$ do
+  $V(s) \leftarrow 0$
+end for
+while not converged do
+  Update $V(s)$ {Bellman backup}
+end while
+return $V$
+```
+
 ## Links
 
 [Content from markdown-it](https://markdown-it.github.io/)

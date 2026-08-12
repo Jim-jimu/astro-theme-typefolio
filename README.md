@@ -28,6 +28,10 @@ Typefolio is a professional, elegant, static-fast publishing template built with
   - [Configure](#configure)
   - [Adding Posts, Galleries, and Tags](#adding-posts-galleries-and-tags)
     - [Post Frontmatter](#post-frontmatter)
+    - [Technical Writing Syntax](#technical-writing-syntax)
+      - [Image width](#image-width)
+      - [Text color](#text-color)
+      - [Pseudocode](#pseudocode)
     - [Tag Frontmatter](#tag-frontmatter)
     - [Gallery Frontmatter](#gallery-frontmatter)
   - [Search](#search)
@@ -52,6 +56,8 @@ Typefolio is a professional, elegant, static-fast publishing template built with
   - [Admonitions](https://astro-cactus.chriswilliams.dev/posts/markdown-elements/admonitions/) card
   - [Expressive Code](https://expressive-code.com/) code blocks and syntax highlighter
   - Github card
+  - Responsive image sizing, text colors, and pseudocode blocks
+  - Wider long-form article layout with an independently scrollable table of contents
 - Project pages and showcase sections
 - Gallery index with horizontally scrollable photography collections
 - Local bilingual font 🇬🇧 🇨🇳
@@ -218,6 +224,55 @@ pinned: true
 giscus: true
 ---
 ```
+
+### Technical Writing Syntax
+
+Blog posts use a wider reading layout than other pages. On desktop, the article body is capped at
+`80ch`, while the table of contents has its own scrollbar when it exceeds `60vh`. The layout remains
+single-column on smaller screens.
+
+#### Image width
+
+Append a width attribute directly after a Markdown image. Percentages greater than `0%` and up to
+`100%`, and pixel widths from `1px` to `4096px`, are supported; images never overflow the article body.
+
+```md
+![Architecture diagram](./architecture.png){width=75%}
+![Detail view](./detail.png){width=480px}
+```
+
+#### Text color
+
+Use a text directive with one of the theme-aware colors: `red`, `blue`, `green`, `orange`, `yellow`,
+`purple`, `pink`, `teal`, or `gray`.
+
+```md
+:red[Important result]
+:color[Alternative form]{color=blue}
+```
+
+Colors adapt to light and dark themes. Do not use color as the only way to communicate meaning.
+
+#### Pseudocode
+
+Use a `pseudocode` fence for paper-style algorithms. The optional `title` (or `caption`) and `number`
+metadata create the caption. `@require` and `@ensure` describe inputs and outputs. Two spaces or one tab
+add one indentation level; common control-flow keywords are emphasized automatically. Text inside
+braces is treated as a comment, and inline `$...$` expressions are rendered with KaTeX.
+
+````md
+```pseudocode title="Value Iteration" number=1
+@require State set $\mathcal{S}$, discount factor $\gamma$
+@ensure Optimal value function $V^*$
+for each $s \in \mathcal{S}$ do
+  $V(s) \leftarrow 0$
+end for
+while not converged do
+  Update $V(s)$ {Bellman backup}
+end while
+return $V$
+```
+````
 
 ### Tag Frontmatter
 
